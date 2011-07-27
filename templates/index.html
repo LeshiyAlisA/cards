@@ -5,11 +5,11 @@
     <title>Тестовая страница</title>
 </head>
 <body>
-    <form>
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="submit">
+ <form action="" method="post">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
     </form>
 </body>
 </html>

@@ -104,7 +104,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'cards.urls'
 
 TEMPLATE_DIRS = (
-    '/home/leshiy/PycharmProjects/cards/templates',
+    '/home/leshiy/cards/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
