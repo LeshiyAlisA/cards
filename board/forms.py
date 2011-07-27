@@ -6,4 +6,4 @@ class SaveWord(forms.Form):
     word=forms.CharField()
     translate=forms.CharField()
     value=forms.CharField()
-    id_user=forms.IntegerField()
+
