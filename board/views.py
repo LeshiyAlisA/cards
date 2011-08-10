@@ -4,10 +4,6 @@ from cards.board.forms import SaveWord
 from cards.board.models import word
 from cards.board.translate import translate
 
-
-
-
-
 def test(request):
     if request.method=="POST":
         form=SaveWord(request.POST)
@@ -15,13 +11,12 @@ def test(request):
             cd=form.cleaned_data
             wr=word()
             wr.word=cd['word']
-            wr.translate=cd['translate']
+            wr.transcription=cd['transcription']
             wr.value=cd['value']
             wr.id_user=1
             wr.save()
             tr=translate()
-            tr.test()
-        
+            tr.test(wr.word)
     else:
         form=SaveWord()
 
