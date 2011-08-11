@@ -7,3 +7,6 @@ class SaveWord(forms.Form):
     transcription=forms.CharField()
     value=forms.CharField()
 
+class AddWords(forms.Form):
+    words=forms.CharField(widget=forms.Textarea)
+
