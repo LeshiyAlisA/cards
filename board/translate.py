@@ -18,23 +18,25 @@ class translate:
         str=u.read()
         parser = html5lib.HTMLParser(tree=treebuilders.getTreeBuilder('dom'),tokenizer=sanitizer.HTMLSanitizer)
         dom = parser.parse(str)
+
         for elem in dom.getElementsByTagName('li'):
             if elem.hasAttribute('class'):
-                if elem.getAttribute('class')=="b-translate-answer__lan__item b-translate-answer__lan__cur":
+                if elem.getAttribute('class')=='b-translate-answer__lan__item b-translate-answer__lan__cur':
                     
+                    for child in elem.childNodes:
+                        if child.nodeType==3:
+                            print child.data.strip()
+
+        for elem in dom.getElementsByTagName('span'):
+            if elem.hasAttribute('class'):
+                if elem.getAttribute('class')=='b-translate__tr':
                     for child in elem.childNodes:
                         if child.nodeType==3:
                             print child.data.strip()
 
 
 
-        #parser = html5lib.HTMLParser(tree=treebuilders.getTreeBuilder("lxml"))
-        #tree=parser.parse(str)
-        #root= tree.getroot()
-        #transcription=root.find('.//{http://www.w3.org/1999/xhtml}span[@class="b-translate__tr"]')
-        #value=root.find('.//{http://www.w3.org/1999/xhtml}li[@class="b-translate-answer__lan__item b-translate-answer__lan__cur"]')
-        #value.text
-      
+
       
 
 
