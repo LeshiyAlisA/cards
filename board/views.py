@@ -11,12 +11,13 @@ def test(request):
             cd=form.cleaned_data
             wr=word()
             wr.word=cd['word']
-            wr.transcription=cd['transcription']
-            wr.value=cd['value']
+            tr=translate()
+            value=tr.ValueTranscription(wr.word)
+            wr.transcription=value['transcription']
+            wr.value=value['value']
             wr.id_user=1
             wr.save()
-            tr=translate()
-            tr.test(wr.word)
+
     else:
         form=SaveWord()
 
