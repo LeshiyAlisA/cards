@@ -2,7 +2,8 @@ from django.conf.urls.defaults import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
-from cards.board.views import test,AddWords
+from cards.board.views import main,AddWords,Profile
+from django.contrib.auth.views import login,logout
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -15,7 +16,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
      url(r'^admin/', include(admin.site.urls)),
-     url(r'^test/', test),
+     url('^$', main),
      url(r'^addwords/', AddWords),
+     url(r'^accounts/login/$',  login),
+     url(r'^accounts/logout/$', logout),
+     url(r'^accounts/profile/',Profile)
 
 )

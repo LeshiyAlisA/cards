@@ -1,17 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+{% extends "base.html" %}
 
-  </head>
-  <body>
+{% block content %}
+<h1>морда</h1>
+<table>
 
-     <form action="" method="post">
-        <table>
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Submit">
-    </form>
-     
+    {%   for word in wr %}
+        {% if forloop.counter|divisibleby:"2" %}
+            <td>
+        <p>чётно {{ word.value }}</p></td></tr>
+        {% else %}
+            <tr>
+            <td><p> не совсем {{ word.value }}</p></td>
+        {% endif %}
 
-  </body>
-</html>
+
+    {% endfor %}
+</table>
+{%  endblock %}
+
