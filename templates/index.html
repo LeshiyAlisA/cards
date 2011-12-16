@@ -1,20 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>морда</h1>
-<table>
-
-    {%   for word in wr %}
-        {% if forloop.counter|divisibleby:"2" %}
-            <td>
-        <p>чётно {{ word.value }}</p></td></tr>
-        {% else %}
-            <tr>
-            <td><p> не совсем {{ word.value }}</p></td>
-        {% endif %}
-
-
-    {% endfor %}
-</table>
+<form action="/addwords" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Сохранить" />
+</form>
 {%  endblock %}
 
