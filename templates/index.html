@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="/addwords" method="post">{% csrf_token %}
+<form action="/addwords/" method="POST">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Сохранить" />
 </form>

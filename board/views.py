@@ -11,7 +11,10 @@ def SingIn(request):
     return render_to_response('login.html',locals())
 
 def ListWords(request):
+
     wr=word.objects.all
+
+
     return render_to_response('list.html',locals())
 
 
