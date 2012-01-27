@@ -4,6 +4,11 @@ from cards.board import forms
 from cards.board.models import word
 from cards.board.translate import translate
 
+
+def PrintWords(request):
+    wr=word.objects.all
+    return render_to_response('print.html',locals())
+
 def Profile(request):
     return render_to_response('profile.html',locals())
 
@@ -11,11 +16,11 @@ def SingIn(request):
     return render_to_response('login.html',locals())
 
 def ListWords(request):
-
+    print "!!!!!ListWords"
     wr=word.objects.all
 
 
-    return render_to_response('list.html',locals())
+    return 'succes'#render_to_response('list.html',locals())
 
 
 

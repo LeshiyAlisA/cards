@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Печать слов</h1>
+<table border="1" style="border-color: #000000; border-style: ridge">
+    {% for v in wr %}
+        <tr>
+            <td style="width: 200px">
+               <p>{{ v.word }}</p>
+            </td>
+            <td>
+                <p>{{ v.transcription}}</p>
+                <p>{{v.value}}</p>
+            </td>
+        </tr>
+
+    {% endfor %}
+</table>
+{%  endblock %}
